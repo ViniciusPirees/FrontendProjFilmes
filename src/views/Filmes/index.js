@@ -54,7 +54,7 @@ export default () => {
                 <ScrollView>
                     {loading &&
                         <ActivityIndicator size="large"
-                            color={themes.padrao.colors.brand.primario} />
+                            color={themes.padrao.colors.brand.terciario} />
                     }
                     {listaFilmes.length === 0 && !loading &&
                         <Text>Ops! Não existe nenhum Filme.</Text>
@@ -65,7 +65,7 @@ export default () => {
                         <ListaFilmes key={k} data={Filme} />
                     ))}
                 </ScrollView>
-                <StyledButtonPrimario icon="car" text="Adicionar" onPress={handleRedirectFilmeButtonClick} />
+                <StyledButtonPrimario icon="popcorn" text="Adicionar" onPress={handleRedirectFilmeButtonClick} />
                 <StyledButtonTerciario icon="logout" text="Sair" onPress={sair} />
             </Container>
         </>

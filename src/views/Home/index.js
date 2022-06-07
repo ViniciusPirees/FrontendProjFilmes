@@ -6,9 +6,9 @@ import Filme from '../Filme'
 export default function Home(){
     return (
         <>
-        <Header headerTitle="Filmes" />
+        <Header headerTitle="Home" />
         <Container>
-            <Filme />
+            <Home />
             <Title>Início</Title>
         </Container>
        </>

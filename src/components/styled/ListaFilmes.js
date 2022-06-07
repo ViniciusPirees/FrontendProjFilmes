@@ -4,13 +4,14 @@ import { useNavigation } from '@react-navigation/native'
 import themes from '../../themes'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
+
 export default ({ data }) => {
     const navigation = useNavigation()
     const navegaDetalhe = () => {
         navigation.navigate('Filme', { Filme: data })
     }
 
-    const icone = data.tipo == 'Ação' ? 'sword' : data.tipo == 'Terror' ? 'ghost' : data.tipo == 'Drama' ? 'drama' : data.tipo == 'Drama' ? 'drama-masks' : data.tipo == 'Comédia' ? 'laugh-beam' : data.tipo == 'Documentário' ? 'videocamera' : ''
+    const icone = data.genero == 'Ação' ? 'sword' : data.genero == 'Terror' ? 'ghost' : data.genero == 'Drama' ? 'drama-masks' : data.genero == 'Comédia' ? 'robot-happy-outline' : data.genero == 'Documentário' ? 'camera-document' : ''
 
     return (
         <Area onPress={navegaDetalhe}>
@@ -18,10 +19,10 @@ export default ({ data }) => {
                 <MaterialCommunityIcons name={icone} size={50} color={themes.padrao.colors.neutral.neutral_100} />
             </InfoArea>
             <InfoArea>
-                <Nome>{data.nome}</Nome>
-                <Diretor>{data.diretor}</Diretor>
-                <Ano>{data.ano}</Ano>
-                <Nota>{data.nota}</Nota>
+                <Nome>Nome: {data.nome}</Nome>
+                <Diretor>Diretor: {data.diretor}</Diretor>
+                <Ano>Ano: {data.ano}</Ano>
+                <Nota>Nota: {data.nota}</Nota>
             </InfoArea>
         </Area>
     )
@@ -36,10 +37,8 @@ flex-direction: row;
 `
 
 const InfoArea = styled.View`
-margin-horizontal: 10px;
-padding-horizonda: 10px;
-justify-content: center;
 
+margin-right: 10px;
 `
 const Nome = styled.Text`
 color: ${themes.padrao.colors.neutral.neutral_100}
@@ -64,4 +63,5 @@ color: ${themes.padrao.colors.neutral.neutral_100}
 font-size: 14px;
 margin-top: 4px;
 width: auto;
+margin-bottom: 4px;
 `
